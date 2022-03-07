@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
+import EpisodeList from '../components/EpisodeList'
+import Layout from '../components/Layout'
 
 export default function Home() {
-  return (
-    <div>test</div>
-  )
+  return <Layout>
+    <EpisodeList></EpisodeList>
+  </Layout>
 }
