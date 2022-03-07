@@ -5,11 +5,10 @@ export default ({ children }) => {
         <header>
             <Header></Header>
         </header>
-        <main className="p-4 ">
+        <main className="">
             {children}
         </main>
-        <footer className=" px-8 py-2">
-            footer
+        <footer>
         </footer>
     </div>
 }
