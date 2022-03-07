@@ -37,13 +37,16 @@ export default function Home() {
 
 
   return <Layout>
-    <div className='py-2 flex flex-col sm:hidden items-center align-middle '>
-      <button className='p-8 bg-orange-200 hover:bg-orange-300 w-full' onClick={() => setShowSeasons(!showSeasons)}>Seasons</button>
+    <div className='py-2 flex flex-col sm:hidden items-center align-middle space-y-1'>
+      <button className='text-xl font-bold p-8 bg-orange-200 hover:bg-orange-300 w-full' onClick={() => setShowSeasons(!showSeasons)}>Season {season + 1} </button>
       {showSeasons ?
 
         seasons.map((s, i) => {
           let selected = i == season ? " from-orange-400 bg-gradient-to-l to-red-500" : "";
-          return (<button className={"w-full p-8 font-bold rounded bg-white px-16 hover:from-orange-400 hover:bg-gradient-to-l hover:to-red-500 hover:text-white" + selected} onClick={(e) => setSeason(i)}>
+          return (<button className={"text-xl  w-full p-8 font-bold rounded bg-white px-16 hover:from-orange-400 hover:bg-gradient-to-l hover:to-red-500 hover:text-white" + selected} onClick={(e) => {
+            setSeason(i)
+            setShowSeasons(false)
+          }}>
             Season {i + 1}
           </button>)
         }
